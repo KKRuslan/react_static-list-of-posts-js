@@ -11,11 +11,4 @@ const enrichedPosts = postsFromServer.map(post => ({
   comments: commentsFromServer.filter(c => c.postId === post.id),
 }));
 
-export const App = () => (
-  <section className="App">
-    <h1 className="App__title">Static list of posts</h1>
-    <div className="PostList">
-      <PostList posts={enrichedPosts} />
-    </div>
-  </section>
-);
+export const App = () => <PostList posts={enrichedPosts} />;
